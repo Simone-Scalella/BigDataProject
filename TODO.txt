@@ -1,0 +1,17 @@
+data: 16_03_2023
+
+- Provare a vedere se il clustering, in base alle condizioni temporale, se migliora il clustering, oppure no.
+-- Considero il 100% dei dati disponibili e così via, devono variare starting point e durata.
+-- sposto lo starting point di 5 giorni, e la durata può avere anche una variabile di +/- 5 giorni.
+-- Grafico a matrice per mostrare i risultati, su un asse la durata e sull'altro lo starting point, sarà 3D, come contenuto ci mettiamo la media della deviazione standard, il minimo della deviazione standard, o il massimo.
+-- minimo della distanza tra cluster in termini di resa e anche il massimo.
+
+
+- Per valurare la correlazione possiamo valutare sui punti dei cluster, ci serve una minore deviazione standard, le rese devono essere lontane tra di loro.
+- Metriche di valutazione sono la variazione tra i box plot della resa.
+
+- Fare clustering ulizzando il k-means sugli fpca score, abbiamo uno score per ogni time series, quindi abbiamo 100 serie temporali avremo 100 fpca score, dove ogni score contiene le componenti della funzione.
+
+- Gli score sono in base alle componenti, 100 time series 
+
+- Possiamo cambiare le metriche per il clustering.

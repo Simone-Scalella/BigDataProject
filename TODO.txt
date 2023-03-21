@@ -14,4 +14,4 @@ data: 16_03_2023
 
 - Gli score sono in base alle componenti, 100 time series 
 
-- Possiamo cambiare le metriche per il clustering.
+- Possiamo cambiare le metriche per il clustering. (fatto)

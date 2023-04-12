@@ -28,4 +28,16 @@ Per ogni time series di ogni cluster andiamo a vedere la resa
 per ogni box plot usando iil minimo e massimo andiamo a calcolare l'intersezione, per vedere quanto sono separabili.
 Scegliere l'intervallo con il valore minore.
 
+- Data 12_04_2023
+
+- Colorare gli scatter resa/componente con i colori dei cluster ( variare il k del k-means)
+
+- Fare il lavoro precedente sugli altri campi
+
+- Lo scatter della componente 0 e 1 colorarlo al variatre di k
+
+- Fare delle slides per mostrare i risultati ottenuti
+
+- Prospettive, creare un modello che fa interpolazione tra resa e score 0, serve una interpolazione
+
 

@@ -41,3 +41,7 @@ Scegliere l'intervallo con il valore minore.
 - Prospettive, creare un modello che fa interpolazione tra resa e score 0, serve una interpolazione
 
 
+- 18-09-2023
+Fare tutto il lavoro per k = 3
+
+

@@ -6,26 +6,26 @@ from multiprocessing import Process
 
 def Clustering(num_cluster):
     print("clustering ",num_cluster)
-    kmeans_total_3 = np.ndarray([int(155/5),int(155/5)], dtype='object')
-    newSeries_total_3 = np.ndarray([int(155/5),int(155/5)], dtype='object')
-    rese_total_3 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
-    kluster_model_3 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
-    centroids_3 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
+    kmeans_total_3 = np.ndarray([XMax,YMax], dtype='object')
+    newSeries_total_3 = np.ndarray([XMax,YMax], dtype='object')
+    rese_total_3 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
+    kluster_model_3 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
+    centroids_3 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
 
-    kmeans_total_4 = np.ndarray([int(155/5),int(155/5)], dtype='object')
-    newSeries_total_4 = np.ndarray([int(155/5),int(155/5)], dtype='object')
-    rese_total_4 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
-    kluster_model_4 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
-    centroids_4 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
+    kmeans_total_4 = np.ndarray([XMax,YMax], dtype='object')
+    newSeries_total_4 = np.ndarray([XMax,YMax], dtype='object')
+    rese_total_4 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
+    kluster_model_4 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
+    centroids_4 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
 
-    kmeans_total_6 = np.ndarray([int(155/5),int(155/5)], dtype='object')
-    newSeries_total_6 = np.ndarray([int(155/5),int(155/5)], dtype='object')
-    rese_total_6 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
-    kluster_model_6 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
-    centroids_6 = np.ndarray([int(155/5),int(155/5),num_cluster], dtype='object')
+    kmeans_total_6 = np.ndarray([XMax,YMax], dtype='object')
+    newSeries_total_6 = np.ndarray([XMax,YMax], dtype='object')
+    rese_total_6 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
+    kluster_model_6 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
+    centroids_6 = np.ndarray([XMax,YMax,num_cluster], dtype='object')
 
-    for a in range(0,155,5):
-        for b,index in zip(range(a+5,155,5),range(0,int((155-a-5)/5))):
+    for a in range(0,Tmax,5):
+        for b,index in zip(range(a+5,Tmax,5),range(0,int((Tmax-a-5)/5))):
             new_series_3 = allPixelNDVIPoly3[:,a:b]
             new_series_4 = allPixelNDVIPoly4[:,a:b]
             new_series_6 = allPixelNDVIPoly6[:,a:b]
@@ -128,6 +128,9 @@ print(len(newResa6))
 # Global
 #num_cluster = 2
 if __name__ == '__main__':
+    XMax = 15
+    YMax = 15
+    Tmax = 75 #around 15
     # k-means per tutti le combinazioni di intervalli temporali 
     processList = []
     for num_cluster in range(2,7):

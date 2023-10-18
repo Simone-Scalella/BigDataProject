@@ -5,6 +5,9 @@ import numpy as np
 from multiprocessing import Process
 
 def Clustering(num_cluster):
+    XMax = 15
+    YMax = 15
+    Tmax = 75 #around 15
     print("clustering ",num_cluster)
     kmeans_total_3 = np.ndarray([XMax,YMax], dtype='object')
     newSeries_total_3 = np.ndarray([XMax,YMax], dtype='object')
@@ -62,43 +65,43 @@ def Clustering(num_cluster):
                     rese_total_6[int(a/5),index,p] = newResa6[y_pred_6 == p]
                     centroids_6[int(a/5),index,p] = km_6.cluster_centers_[p].ravel()
 
-    with open('./pickles/kmeans_total_3_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kmeans_total_3_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(kmeans_total_3, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/rese_total_3_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/rese_total_3_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(rese_total_3, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/kluster_model_3_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kluster_model_3_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(kluster_model_3, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/kluster_centroids_3_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kluster_centroids_3_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(centroids_3, handle, protocol=pickle.HIGHEST_PROTOCOL)
     
-    with open('./pickles/kmeans_total_4_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kmeans_total_4_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(kmeans_total_4, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/rese_total_4_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/rese_total_4_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(rese_total_4, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/kluster_model_4_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kluster_model_4_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(kluster_model_4, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/kluster_centroids_4_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kluster_centroids_4_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(centroids_4, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickles/kmeans_total_6_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kmeans_total_6_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(kmeans_total_6, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/rese_total_6_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/rese_total_6_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(rese_total_6, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/kluster_model_6_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kluster_model_6_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(kluster_model_6, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickles/kluster_centroids_6_c'+str(num_cluster)+'.pickle', 'wb') as handle:
+    with open('./pickles/kluster_centroids_6_c_ndre'+str(num_cluster)+'.pickle', 'wb') as handle:
         pickle.dump(centroids_6, handle, protocol=pickle.HIGHEST_PROTOCOL)
     
     print("clustering ",num_cluster," completed!")
 
 #Caricamento dei dati e rese
-with open('./pickles/allPixelNDVIPoly.pickle', 'rb') as handle:
+with open('./pickles/allPixelNDREPoly3.pickle', 'rb') as handle:
     allPixelNDVIPoly3 = pickle.load(handle)
 
-with open('./pickles/allPixelNDVIPoly4.pickle', 'rb') as handle:
+with open('./pickles/allPixelNDREPoly4.pickle', 'rb') as handle:
     allPixelNDVIPoly4 = pickle.load(handle)
 
-with open('./pickles/allPixelNDVIPoly6.pickle', 'rb') as handle:
+with open('./pickles/allPixelNDREPoly6.pickle', 'rb') as handle:
     allPixelNDVIPoly6 = pickle.load(handle)
 
 with open('./pickles/newResa3.pickle', 'rb') as handle:
@@ -131,6 +134,7 @@ if __name__ == '__main__':
     XMax = 15
     YMax = 15
     Tmax = 75 #around 15
+
     # k-means per tutti le combinazioni di intervalli temporali 
     processList = []
     for num_cluster in range(2,7):
